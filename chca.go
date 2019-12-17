@@ -17,8 +17,7 @@ var (
 
 func Initialize() {
 
-	createConf()
-	createDir()
+	CreateDir()
 	log.Debug("初始化成功！")
 }
 

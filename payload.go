@@ -394,23 +394,7 @@ upload_theme: theme/upload
 
 `
 
-func createConf() {
-	_, err := os.Stat(confile)
-	if os.IsNotExist(err) {
-		_, err := os.OpenFile(confile, os.O_WRONLY|os.O_CREATE, 0666)
-		if err != nil {
-			panic(err)
-		}
-
-		var confwrite = []byte(yaml_setting)
-		err = ioutil.WriteFile(confile, confwrite, 0666) //写入文件(字节数组)
-		if err != nil {
-			panic(err)
-		}
-	}
-}
-
-func createDir() {
+func CreateDir() {
 
 	_, err := os.Stat(Config().Html)
 	if os.IsNotExist(err) {

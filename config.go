@@ -7,11 +7,6 @@ import (
 )
 
 func load() ([]byte, error) {
-	_, err := os.Stat(confile)
-
-	if os.IsNotExist(err) {
-		createConf()
-	}
 
 	file, err := os.Open(confile)
 	if err != nil {
